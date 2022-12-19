@@ -1,4 +1,4 @@
-const { Schema, model } = require('mongoose');
+const { Schema, model } = require("mongoose");
 
 // Schema to create a course model
 const courseSchema = new Schema(
@@ -20,10 +20,10 @@ const courseSchema = new Schema(
       // Sets a default value of 12 weeks from now
       default: () => new Date(+new Date() + 84 * 24 * 60 * 60 * 1000),
     },
-    students: [
+    users: [
       {
         type: Schema.Types.ObjectId,
-        ref: 'Student',
+        ref: "User",
       },
     ],
   },
@@ -35,6 +35,6 @@ const courseSchema = new Schema(
   }
 );
 
-const Course = model('course', courseSchema);
+const Course = model("course", courseSchema);
 
 module.exports = Course;
