@@ -1,6 +1,6 @@
 const { Schema, model } = require("mongoose");
 
-// Schema to create a course model
+
 const reactionSchema = new Schema(
   {
     reactionId: {
@@ -16,7 +16,10 @@ const reactionSchema = new Schema(
       type: String,
       required: true,
     },
- 
+ createdAt: {
+  type: Date,
+  default: Date.now,
+ }
   },
   {
     toJSON: {
@@ -26,6 +29,5 @@ const reactionSchema = new Schema(
   }
 );
 
-const Course = model("course", courseSchema);
 
-module.exports = Course;
+module.exports = reactionSchema;
